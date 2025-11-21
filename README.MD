@@ -7,8 +7,10 @@ Restful API untuk sistem manajemen perpustakaan dengan Express.js dengan DB Post
 - Docker
 
 ## Setup
-1 **Clone Repository**
-  git clone <repository-url>
-  cd library-management-api
-2 **Jalankan Docker-compose.yml**
-  docker-compose up --build
+- **Clone Repository**
+    ```bash
+    git clone <repository-url>
+    cd library-management-api
+- **Jalankan Docker-compose.yml**
+    ```bash
+    docker-compose up --build
