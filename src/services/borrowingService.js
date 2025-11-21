@@ -1,5 +1,5 @@
 const Borrowing = require('../models/borrowing');
-const Book = require('../models/Book');
+const Book = require('../models/book');
 const Member = require('../models/member');
 const pool = require('../config/database');
 
