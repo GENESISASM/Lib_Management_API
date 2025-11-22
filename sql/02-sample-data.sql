@@ -45,25 +45,35 @@ INSERT INTO members (name, email, phone, address) VALUES
 ('Nicole King', 'nicole.k@email.com', '081234567809', '135 Port Ave, Area');
 
 -- Insert Sample Data for Borrowings
- INSERT INTO borrowings (book_id, member_id, borrow_date, return_date, status) 
- VALUES 
- ('b1a2c3d4-e5f6-4321-a123-987654321abc', 'u1b2c3d4-e5f6-4321-a123-987654321def', '2024-11-21', '2024-11-28', 'RETURNED'),
- ('b2a3c4d5-e6f7-4321-a123-987654321abc', 'u2b3c4d5-e6f7-4321-a123-987654321def', '2024-11-22', '2024-11-29', 'RETURNED'), 
- ('b3a4c5d6-e7f8-4321-a123-987654321abc', 'u3b4c5d6-e7f8-4321-a123-987654321def', '2024-11-23', '2024-11-30', 'RETURNED'),
- ('b4a5c6d7-e8f9-4321-a123-987654321abc', 'u4b5c6d7-e8f9-4321-a123-987654321def', '2024-11-24', NULL, 'BORROWED'), 
- ('b5a6c7d8-e9f0-4321-a123-987654321abc', 'u5b6c7d8-e9f0-4321-a123-987654321def', '2024-11-25', NULL, 'BORROWED'),
- ('b6a7c8d9-e0f1-4321-a123-987654321abc', 'u6b7c8d9-e0f1-4321-a123-987654321def', '2024-11-26', '2024-12-03', 'RETURNED'), 
- ('b7a8c9d0-e1f2-4321-a123-987654321abc', 'u7b8c9d0-e1f2-4321-a123-987654321def', '2024-11-27', NULL, 'BORROWED'),
- ('b8a9c0d1-e2f3-4321-a123-987654321abc', 'u8b9c0d1-e2f3-4321-a123-987654321def', '2024-11-28', '2024-12-05', 'RETURNED'), 
- ('b9a0c1d2-e3f4-4321-a123-987654321abc', 'u9b0c1d2-e3f4-4321-a123-987654321def', '2024-11-29', NULL, 'BORROWED'),
- ('b0a1c2d3-e4f5-4321-a123-987654321abc', 'u0b1c2d3-e4f5-4321-a123-987654321def', '2024-11-30', '2024-12-07', 'RETURNED'), 
- ('c1b2d3e4-f5a6-4321-a123-987654321abc', 'v1w2x3y4-z5a6-4321-a123-987654321def', '2024-12-01', NULL, 'BORROWED'),
- ('c2b3d4e5-f6a7-4321-a123-987654321abc', 'v2w3x4y5-z6a7-4321-a123-987654321def', '2024-12-02', '2024-12-09', 'RETURNED'), 
- ('c3b4d5e6-f7a8-4321-a123-987654321abc', 'v3w4x5y6-z7a8-4321-a123-987654321def', '2024-12-03', NULL, 'BORROWED'),
- ('c4b5d6e7-f8a9-4321-a123-987654321abc', 'v4w5x6y7-z8a9-4321-a123-987654321def', '2024-12-04', '2024-12-11', 'RETURNED'),
- ('c5b6d7e8-f9a0-4321-a123-987654321abc', 'v5w6x7y8-z9a0-4321-a123-987654321def', '2024-12-05', NULL, 'BORROWED'),
- ('c6b7d8e9-f0a1-4321-a123-987654321abc', 'v6w7x8y9-z0a1-4321-a123-987654321def', '2024-12-06', '2024-12-13', 'RETURNED'),
- ('c7b8d9e0-f1a2-4321-a123-987654321abc', 'v7w8x9y0-z1a2-4321-a123-987654321def', '2024-12-07', NULL, 'BORROWED'),
- ('c8b9d0e1-f2a3-4321-a123-987654321abc', 'v8w9x0y1-z2a3-4321-a123-987654321def', '2024-12-08', NULL, 'BORROWED'), 
- ('c9b0d1e2-f3a4-4321-a123-987654321abc', 'v9w0x1y2-z3a4-4321-a123-987654321def', '2024-12-09', NULL, 'BORROWED'),
- ('c0b1d2e3-f4a5-4321-a123-987654321abc', 'v0w1x2y3-z4a5-4321-a123-987654321def', '2024-12-10', '2024-12-17', 'RETURNED');
+ INSERT INTO borrowings (book_id, member_id, borrow_date, return_date, status)
+ SELECT 
+    b.id, 
+    m.id, 
+    d.borrow_date, 
+    d.return_date, 
+    d.status
+ FROM (
+    VALUES
+        (1, 1, '2024-11-21'::DATE, '2024-11-28'::DATE, 'RETURNED'),
+        (3, 3, '2024-11-23'::DATE, '2024-11-30'::DATE, 'RETURNED'),
+        (4, 4, '2024-11-24'::DATE, NULL, 'BORROWED'),
+        (5, 5, '2024-11-25'::DATE, NULL, 'BORROWED'),
+        (2, 2, '2024-11-22'::DATE, '2024-11-29', 'RETURNED'),
+        (6, 6, '2024-11-26'::DATE, '2024-12-03'::DATE, 'RETURNED'),
+        (7, 7, '2024-11-27'::DATE, NULL, 'BORROWED'),
+        (8, 8, '2024-11-28'::DATE, '2024-12-05'::DATE, 'RETURNED'),
+        (9, 9, '2024-11-29'::DATE, NULL, 'BORROWED'),
+        (10, 10, '2024-11-30'::DATE, '2024-12-07'::DATE, 'RETURNED'),
+        (11, 11, '2024-12-01'::DATE, NULL, 'BORROWED'),
+        (12, 12, '2024-12-02'::DATE, '2024-12-09'::DATE, 'RETURNED'),
+        (13, 13, '2024-12-03'::DATE, NULL, 'BORROWED'),
+        (14, 14, '2024-12-04'::DATE, '2024-12-11'::DATE, 'RETURNED'),
+        (15, 15, '2024-12-05'::DATE, NULL, 'BORROWED'),
+        (16, 16, '2024-12-06'::DATE, '2024-12-13'::DATE, 'RETURNED'),
+        (17, 17, '2024-12-07'::DATE, NULL, 'BORROWED'),
+        (18, 18, '2024-12-08'::DATE, NULL, 'BORROWED'),
+        (19, 19, '2024-12-09'::DATE, NULL, 'BORROWED'),
+        (20, 20, '2024-12-10'::DATE, '2024-12-17'::DATE, 'RETURNED')
+ ) AS d(book_rn, member_rn, borrow_date, return_date, status)
+ JOIN (SELECT id, ROW_NUMBER() OVER () AS rn FROM books) b ON b.rn = d.book_rn
+ JOIN (SELECT id, ROW_NUMBER() OVER () AS rn FROM members) m ON m.rn = d.member_rn
