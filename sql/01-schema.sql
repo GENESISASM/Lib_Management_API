@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS borrowings (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     book_id UUID REFERENCES books(id) ON DELETE CASCADE,
     member_id UUID REFERENCES members(id) ON DELETE CASCADE,
-    borrow_date DATE NOT NULL,
+    borrow_date DATE NOT NULL DEFAULT CURRENT_DATE,
     return_date DATE,
     status VARCHAR(10) NOT NULL DEFAULT 'borrowed',
     created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
