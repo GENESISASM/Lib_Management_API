@@ -17,4 +17,4 @@ Restful API untuk sistem manajemen perpustakaan dengan Express.js dengan DB Post
     docker-compose up --build
 - **API dapat diakses di endpoint**
     ```bash
-    http://localhost:3000
+    http://localhost:3000/health
