@@ -46,7 +46,7 @@ app.use('*', (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
-  console.log(`API endpoint: http://localhost:${PORT}`);
+  console.log(`API Endpoint Check: http://localhost:${PORT}/health`);
 });
 
 module.exports = app;
