@@ -7,7 +7,7 @@ Restful API untuk sistem manajemen perpustakaan dengan Express.js dengan DB Post
 - PostgreSQL = v15
 - Docker Compose = v3.8
 
-## Setup
+## Cara Menjalankan API
 - **Clone Repository**
     ```bash
     git clone <repository-url>
