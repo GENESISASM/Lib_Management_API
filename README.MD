@@ -2,9 +2,10 @@
 Restful API untuk sistem manajemen perpustakaan dengan Express.js dengan DB PostgreSQL
 
 ## Teknologi
-- Node.js & Express.js
-- PostgreSQL
-- Docker
+- Node.js = v18
+- Express.js = v4
+- PostgreSQL = v15
+- Docker Compose = v3.8
 
 ## Setup
 - **Clone Repository**
@@ -14,3 +15,6 @@ Restful API untuk sistem manajemen perpustakaan dengan Express.js dengan DB Post
 - **Jalankan Docker-compose.yml**
     ```bash
     docker-compose up --build
+- **API dapat diakses di endpoint**
+    ```bash
+    http://localhost:3000
