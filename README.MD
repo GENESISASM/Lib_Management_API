@@ -11,13 +11,13 @@ Restful API untuk sistem manajemen perpustakaan dengan Express.js dengan DB Post
 - **Clone Repository**
     ```bash
     git clone https://github.com/GENESISASM/Lib_Management_API.git
+- **Pindah Directory**
+    ```bash
     cd library-management-api
 - **Jalankan Docker-compose.yml**
     ```bash
     docker-compose up --build 
-
     atau
-
     docker-compose up --build -d
 - **API dapat diakses di endpoint**
     ```bash
