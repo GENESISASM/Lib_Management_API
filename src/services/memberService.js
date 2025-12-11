@@ -1,4 +1,5 @@
 const Member = require('../models/member');
+const Borrowing = require('../models/borrowing');
 const { v4: uuidv4 } = require('uuid');
 
 class MemberService {

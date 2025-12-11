@@ -76,7 +76,7 @@ class BorrowingService {
 
       // Update borrowing record
       const returnDate = new Date().toISOString().split('T')[0];
-      const updatedBorrowing = await Borrowing.updateReturn(borrowingId, returnDate);
+      const updatedBorrowing = await Borrowing.updateStatus(borrowingId, returnDate);
 
       await client.query('COMMIT');
       return updatedBorrowing;
