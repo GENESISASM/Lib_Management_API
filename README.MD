@@ -10,11 +10,16 @@ Restful API untuk sistem manajemen perpustakaan dengan Express.js dengan DB Post
 ## Cara Menjalankan API
 - **Clone Repository**
     ```bash
-    git clone <repository-url>
+    git clone https://github.com/GENESISASM/Lib_Management_API.git
     cd library-management-api
 - **Jalankan Docker-compose.yml**
     ```bash
-    docker-compose up --build
+    docker-compose up --build 
+
+    atau
+
+    docker-compose up --build -d
 - **API dapat diakses di endpoint**
     ```bash
     http://localhost:3000/health
+    http://localhost:3000/api/books
